@@ -1,22 +1,27 @@
+import React from 'react';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.scss';
-
+import { Provider } from 'react-redux';
+import store from './common/redux/store';
+// import Home from './components/Routes/ReduxTest/Home';
+// import HooksHome from './components/Routes/ReduxTest/HooksHome';
+// import IceCreamContainer from './components/Routes/ReduxTest/iceCreamContainer';
+// import NewCakeContainer from './components/Routes/ReduxTest/NewCakeContainer';
+// import ItemContainer from './components/Routes/ReduxTest/ItemContainer';
+import UserContainer from './components/Routes/ReduxTest/UserContainer';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        {/* <ItemContainer cake/>
+        <ItemContainer />
+        <IceCreamContainer/>
+        <HooksHome/>
+        <Home/>
+        <NewCakeContainer/> */}
+        <UserContainer/>
+      </div>
+    </Provider>
   );
 }
 
