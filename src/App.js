@@ -1,25 +1,23 @@
 import React from 'react';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.scss';
+import './common/SCSS/main.scss';
+import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './common/redux/store';
-// import Home from './components/Routes/ReduxTest/Home';
-// import HooksHome from './components/Routes/ReduxTest/HooksHome';
-// import IceCreamContainer from './components/Routes/ReduxTest/iceCreamContainer';
-// import NewCakeContainer from './components/Routes/ReduxTest/NewCakeContainer';
-// import ItemContainer from './components/Routes/ReduxTest/ItemContainer';
-import UserContainer from './components/Routes/ReduxTest/UserContainer';
+import Header from './components/Header/Header'
+import Home from './components/Routes/Home/Home'
+import Offers from './components/Routes/Offers/Offers';
+import PageNotFound from './components/Routes/PageNotFound/PageNotFound';
+
 function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        {/* <ItemContainer cake/>
-        <ItemContainer />
-        <IceCreamContainer/>
-        <HooksHome/>
-        <Home/>
-        <NewCakeContainer/> */}
-        <UserContainer/>
+        <Header />
+        <Routes>
+          <Route path="/" index element={<Home />} />
+          <Route path="offers" element={<Offers />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
       </div>
     </Provider>
   );

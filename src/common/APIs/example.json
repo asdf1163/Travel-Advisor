@@ -1,0 +1,28 @@
+// Use geoLocation and use 'location by public IP address'
+// Enter to my service
+{
+    "settings": {
+        "language": "Polish",
+        "location": "pl_PL",
+        "currency": "PLN",
+        "timeZone": "+1"
+    }
+}
+//  Enter to 'Offers' page
+{
+    "offers": {
+        "223": {
+            //id -> that's what I'm looking for
+            // It will used to also to find a page with more information about a trip
+            "username": "Rafał",
+            "price": "244.2",
+            // calculate by the currency of course
+            "rate": "3.5",
+            "country": "USA",
+            "city": "Los Angeles",
+            // 1. Not neccesery to choose
+            // 2. Can add a few cities or just a state of a Country
+            "duration": "4 days"
+        }
+    }
+}

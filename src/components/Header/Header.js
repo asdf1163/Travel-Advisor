@@ -1,10 +1,14 @@
-import './Header.scss';
-
+import '../../common/SCSS/Header.scss';
+import { Link, Outlet } from 'react-router-dom';
 
 const Header = () => {
-    return(
+    return (
         <div className="header">
-            nagłowek
+            <Link className="btn" to="/"><div class="logo">LOGO</div></Link>
+            <Link className="btn" to="main"><span>Main</span></Link>
+            <Link className="btn" to="offers"><span>Offers</span></Link>
+            <Link className="btn" to="about"><span>About</span></Link>
+            <Outlet />
         </div>
     )
 }

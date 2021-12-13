@@ -1,0 +1,121 @@
+@use '../SCSS/abstracts/colors';
+@use '../SCSS/abstracts/fonts';
+
+%flex-row
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+%column-size
+{
+    width:50%;
+    height: 100%;
+}
+
+.offert
+{
+    height: 220px;
+    width: 520px;
+    background-color: rgb(241, 239, 239);
+    display:flex;
+    border: 1px solid rgb(124, 124, 124);
+    border-radius: 60px;
+    margin: 10px;
+
+    .column_left{
+        @extend %column-size;
+
+        @extend %flex-row;
+        .image
+        {   
+            // height: 120px;
+            // width: 120px;
+            // border-radius: 100px;
+            clip-path: circle(72px at center);
+            background-color: white;
+            mask-clip: 25px;
+
+            img
+            {
+
+            }
+        }
+        .name
+        {
+            font-size: 25px;
+            font-family: fonts.$primary-font;
+        }
+        .stars
+        {
+            color:#E58A02;
+            margin-top:-8px;
+            svg
+            {
+                width:25px;
+                height: 25px;
+            }
+        }
+    }
+    .column_right{
+        
+        @extend %column-size;
+        @extend %flex-row;
+        .info
+        {
+            text-transform: uppercase;
+            font-family: fonts.$info-font;
+            @extend %flex-row;
+            .country
+            {
+                font-size: 30px;
+            }
+            .duration
+            {
+                font-size: 16px;
+                font-style: italic;
+                color:#4e4e4e;
+            }
+        }
+        .info2
+        {
+            @extend %flex-row;
+
+            .price
+            {
+                font-size: 23px;
+                text-transform: uppercase;
+                font-family: fonts.$primary-font;
+                margin-bottom: 10px;
+            }
+            button
+            {
+                font-size: 25px;
+                color:white;
+                text-transform: uppercase;
+                font-family: fonts.$primary-font;
+                background-color: colors.$button-color;
+                padding: 15px 35px;
+                border-radius: 25px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 540px) {
+    .column_right {
+        .info2 {
+            .price
+            {
+                font-size: 20px;
+            }
+            button
+            {
+                font-size: 20px;
+                padding: 15px;
+            }
+        }
+    }
+    }
+}

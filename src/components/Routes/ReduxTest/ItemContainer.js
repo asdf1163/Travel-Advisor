@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { buyCake, buyIceCream } from "../../../common/redux"
+import { buyCake } from "../../../common/redux"
 const ItemContainer = (props) => {
     return(
         <div>
@@ -9,19 +9,16 @@ const ItemContainer = (props) => {
     )
 }
 
-const mapStateToProps = (state, ownProps) => {
-    const itemState = ownProps.cake 
-    ? state.cake.numOfCakes 
-    : state.iceCream.numOfIceCreams
+const mapStateToProps = (state) => {
+    const itemState = state.cake.numOfCakes
     return {
         item: itemState
     }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-    const dispatchFunction = ownProps.cake
-    ? () => dispatch(buyCake())
-    : () => dispatch(buyIceCream())
+const mapDispatchToProps = (dispatch) => {
+    const dispatchFunction = () => dispatch(buyCake())
+
 
     return {
         buyItem: dispatchFunction
