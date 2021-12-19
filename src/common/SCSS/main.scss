@@ -1,0 +1,18 @@
+@use './abstracts/colors';
+body
+{
+    margin: 0;
+    background-color: colors.$primary-color;
+}
+
+button
+{
+    background-color: initial;
+    border: none;
+}
+
+a
+{
+    text-decoration: none;
+    color: white;
+}

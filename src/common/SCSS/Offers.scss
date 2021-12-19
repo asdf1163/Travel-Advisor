@@ -1,0 +1,13 @@
+.list
+{
+    margin: 25px 50px 0px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    @media screen and (max-width: 540px) {
+        &{
+            margin: 0;
+        }   
+    }
+}

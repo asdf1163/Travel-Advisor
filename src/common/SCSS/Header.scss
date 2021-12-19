@@ -1,0 +1,37 @@
+@use '../../common/SCSS/abstracts/colors';
+@use '../../common/SCSS/abstracts/fonts';
+
+.header{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    background-color: colors.$header-color;
+    height: 65px;
+    
+    .btn
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        height: 100%;
+        width: 140px;
+        font-family: fonts.$header-font;
+        transition: ease-in-out 0.2s;
+        .logo
+        {
+            font-size: 42px;
+            font-family: fonts.$primary-font;
+        }
+
+        &:hover
+        {
+            //dodac do spana
+            border-bottom: 1px solid white;
+        }
+
+    }
+
+    
+}
+
