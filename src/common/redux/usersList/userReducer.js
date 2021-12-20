@@ -7,15 +7,15 @@ import {
 const initialState = {
   loading: false,
   users: [],
-  error: ""
+  error: "",
 };
 
-const reducer = (state = initialState, action) => {
+export const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_USERS_REQUEST:
       return {
         ...state,
-        loading: true,
+        loading: true
       };
     case FETCH_USERS_SUCCESS:
       return {
@@ -33,5 +33,3 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
-
-export default reducer;

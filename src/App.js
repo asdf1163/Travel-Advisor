@@ -7,7 +7,7 @@ import Header from './components/Header/Header'
 import Home from './components/Routes/Home/Home'
 import Offers from './components/Routes/Offers/Offers';
 import PageNotFound from './components/Routes/PageNotFound/PageNotFound';
-import MoreInfo from './components/Routes/Offers/MoreInfo';
+import MoreInfo from './components/Routes/Offers/MoreInfo/MoreInfo';
 
 function App() {
   return (

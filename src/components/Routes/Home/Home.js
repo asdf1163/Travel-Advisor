@@ -1,11 +1,13 @@
 import React from 'react'
-// import UserContainer from '../ReduxTest/UserContainer'
 
 function Home() {
     return (
         <div>
             Home page :)
-            {/* {<UserContainer />} */}
+            <li>Zrobić API</li>
+            <li>Wprowadzić animacje</li>
+            <li>Wprowadzić API do mapy</li>
+            <li>Dodać resztę stron</li>
         </div>
     )
 }

@@ -1,18 +1,31 @@
-@use './abstracts/fonts';
+@use "./abstracts/fonts";
+@use "./abstracts/colors";
 
 .page {
   display: flex;
-  margin: 15px 15px 0px 15px;
+  margin: 15px;
+  height: 85vh;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1rem, -0.575rem + 1.533vw, 2.5rem);
+
+  hr {
+    height: 90%;
+    margin: 0 25px;
+  }
+
   .left {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 30%;
-
+    margin-top: 5%;
     .container {
+      position: relative;
       display: flex;
-      min-height: 50vh;
+      min-height: 60vh;
       width: 70%;
+      min-width: 250px;
       background-color: white;
       flex-direction: column;
       justify-content: space-evenly;
@@ -25,30 +38,41 @@
         position: static;
         margin-top: -35%;
         img {
-          width: 150px;
-          height: 150px;
+          block-size: 25vmin;
         }
       }
       .fullname {
         font-weight: 700;
-        font-size: 25px;
+        font-size: 2.2rem;
         font-family: fonts.$primary-font;
+        text-align: center;
       }
       .about {
         text-align: center;
-        font-size: 15px;
+        font-family: fonts.$header-font;
+        font-size: 1.05em;
       }
     }
   }
   .right {
     display: flex;
     flex-flow: column;
-    width: 70%;
+    justify-content: center;
+    width: fit-content;
 
     .images {
       display: flex;
-      justify-content: space-evenly;
-      height: 20%;
+      justify-content: flex-start;
+      // height: 20%;
+      height: 20vh;
+      width: 100%;
+      right: 0;
+      overflow: hidden;
+
+      img {
+        margin: 0 10px;
+        aspect-ratio: 16/9;
+      }
     }
 
     .info {
@@ -60,9 +84,11 @@
         align-items: center;
         height: 10%;
         transition: ease-in-out 1s;
+        margin: 20px 0 5px 0;
         button {
           font-family: fonts.$header-font;
-          font-size: 20px;
+          // font-size: 20px;
+          font-size: 1.3rem;
           height: 70%;
           padding: 0 30px;
           border-radius: 25px;
@@ -72,7 +98,6 @@
           }
         }
       }
-
       .content {
         height: 55vh;
         display: flex;
@@ -80,38 +105,6 @@
         align-items: center;
         margin-left: 5%;
         z-index: 0;
-        .frontboard {
-          position: relative;
-          display: flex;
-          justify-content: center;
-          background-color: rgb(187, 187, 187);
-          width: 60%;
-          height: 100%;
-          border-radius: 25px;
-          z-index: 2;
-
-          .price-slide{
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row;
-            width: inherit;
-            .activity{
-              font-weight: 500;
-            }
-            .price{
-              font-weight: 900;
-            }
-          }
-        }
-        .backboard {
-          position: relative;
-          background-color: rgb(37, 37, 37);
-          width: 30%;
-          height: 100%;
-          border-radius: 25px;
-          z-index: 1;
-          left: -5%;
-        }
       }
     }
   }

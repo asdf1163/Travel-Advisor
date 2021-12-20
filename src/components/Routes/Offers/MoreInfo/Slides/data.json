@@ -1,0 +1,40 @@
+{
+    "1": {
+      "category": "price",
+      "data": {
+        "nationality": "Scotland",
+        "duration": "2 days",
+        "plan": [
+          {
+            "atraction": "Zakupy",
+            //zmienić to jakoś, bo to nie ma sensu 
+            "geoLocation":{
+              "latitude": "00.00000",
+              "longitude": "00.00000"
+            }
+          },
+          {
+            "atraction": "Mycie",
+            "geoLocation":{
+              "latitude": "00.00000",
+              "longitude": "00.00000"
+            }
+          },
+          {
+            "atraction": "Wyjazd w góry",
+            "geoLocation":{
+              "latitude": "00.00000",
+              "longitude": "00.00000"
+            }
+          },
+          {
+            "atraction": "Zwiedzanie muzeum",
+            "geoLocation":{
+              "latitude": "00.00000",
+              "longitude": "00.00000"
+            }
+          }
+        ]
+      }
+    }
+}

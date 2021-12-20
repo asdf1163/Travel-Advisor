@@ -7,17 +7,15 @@ import { Link } from "react-router-dom";
 
 const Box = ({ userData, fetchUsers }) => {
   useEffect(() => {
-    fetchUsers()
+    fetchUsers();
   }, [fetchUsers]);
 
-  console.log(userData)
-  
   return userData.loading ? (
     <h2>Loading...</h2>
-    ) : userData.error ? (
-      <h2>{userData.error}</h2>
-      ) : (
-        userData.users.map(users => 
+  ) : userData.error ? (
+    <h2>{userData.error}</h2>
+  ) : (
+    userData.users.map((users) => (
       <div className="offert" key={`off${users.id}`}>
         <div className="column_left">
           <div className="image">
@@ -44,13 +42,13 @@ const Box = ({ userData, fetchUsers }) => {
           </div>
         </div>
       </div>
-    )
+    ))
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    userData: state.user,
+    userData: state.users,
   };
 };
 
