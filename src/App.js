@@ -16,8 +16,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" index element={<Home />} />
-          <Route path="offers" element={<Offers />} />
-          <Route path="offers/:offerid" element={<MoreInfo />} />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/offers/:offerid" element={<MoreInfo />} />
+          <Route path="/404" element={<PageNotFound />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>

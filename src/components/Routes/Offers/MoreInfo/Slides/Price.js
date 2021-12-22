@@ -1,17 +1,12 @@
 import "../../../../../common/SCSS/Slides.scss";
-// import { fetchSingleUser } from "../../../../../common/redux";
-import { connect } from "react-redux";
-// import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
-const Price = ({ singleUserData, fetchSingleUser }) => {
-  //    useEffect(() => {
-  //     fetchSingleUser();
-  //    }, [fetchSingleUser])
-  //    console.log(singleUserData)
+const Price = () => {
+  const infoUser = useSelector((state) => state.singleUser.user);
 
   return (
     <div className="frontboard">
-      <div className="slide">
+      <div className="price">
         <div className="info">
           <div className="destonation">
             <span>SCOTLAND</span>
@@ -19,15 +14,69 @@ const Price = ({ singleUserData, fetchSingleUser }) => {
           </div>
           <button>i</button>
         </div>
-        <div className="slide_price">
-          <div className="activity">Wyjazd w góry</div>
-          <div className="price">20.00$</div>
+        <div className="attraction">
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">Wyjazd w góry</div>
+            <div className="value">20.00$</div>
+          </div>
+          <div className="attraction_space_between">
+            <div className="activity">{infoUser.email}</div>
+            <div className="value">20.00$</div>
+          </div>
         </div>
-        <div className="slide_price">
-          <div className="activity">Wyjazd w góry</div>
-          <div className="price">20.00$</div>
-        </div>
-        <div className="slide_price total">
+        <div className="attraction_space_between total">
           <span>TOTAL:</span>
           <span>xxx.xx$</span>
         </div>
@@ -36,17 +85,4 @@ const Price = ({ singleUserData, fetchSingleUser }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    singleUserData: state.singleUser,
-  };
-};
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     fetchSingleUser: () => dispatch(fetchSingleUser()),
-//   };
-// };
-
-//powinno być jeszcze mapDispatchToProps do nadpisywania stanu, ale bo update'uje niepotrzebnie
-export default connect(mapStateToProps)(Price);
+export default Price;

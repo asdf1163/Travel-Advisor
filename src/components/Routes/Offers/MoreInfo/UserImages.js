@@ -10,8 +10,7 @@ const UserImages = () => {
             url: 'https://bi.im-g.pl/im/cf/d9/15/z22911183V,Widok-na-Edynburg.jpg'
         }
     ]
-    // tempLink.map((data)=> console.log(data))
-    return tempLink.map((data) => <img src={data.url} alt={1}/>)
+    return tempLink.map((data, index) => <img key={`img${index}`} src={data.url} alt={`img${index}`}/>)
 }
 
 export default UserImages

@@ -1,2 +1,2 @@
 export * from './usersList/userActions'
-export * from './singleUser/singleUserActions'
+export * as singleUserActions from './singleUser/singleUserActions'

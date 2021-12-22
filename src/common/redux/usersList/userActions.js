@@ -14,14 +14,14 @@ export const fetchUsersRequest = () => {
 export const fetchUsersSuccess = (users) => {
   return {
     type: FETCH_USERS_SUCCESS,
-    payload: users,
+    payload: users
   };
 };
 
 export const fetchUsersFailure = (error) => {
   return {
     type: FETCH_USERS_FAILURE,
-    payload: error,
+    payload: error
   };
 };
 

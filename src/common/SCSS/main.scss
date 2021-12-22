@@ -1,18 +1,35 @@
-@use './abstracts/colors';
-body
-{
-    margin: 0;
-    background-color: colors.$primary-color;
+@use "./abstracts/colors";
+body {
+  margin: 0;
+  background-color: colors.$primary-color;
 }
 
-button
-{
-    background-color: initial;
-    border: none;
+button {
+  background-color: initial;
+  border: none;
 }
 
-a
-{
-    text-decoration: none;
-    color: white;
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* CUSTOM SCROLL*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

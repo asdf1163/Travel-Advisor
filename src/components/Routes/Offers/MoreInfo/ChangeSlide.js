@@ -3,24 +3,23 @@ import Contact from "./Slides/Contact";
 import Opinions from "./Slides/Opinions";
 import Maps from "./Slides/Maps";
 
-const ChangeSlide = ({ curCat }) => {
-    
+const ChangeSlide = ({ curCat, userData }) => {
     const data = [
     {
       category: "Price",
-      slide: <Price />,
+      slide: <Price userData={userData}/>
     },
     {
       category: "Contact",
-      slide: <Contact />,
+      slide: <Contact userData={userData}/>
     },
     {
       category: "Opinions",
-      slide: <Opinions />,
+      slide: <Opinions userData={userData}/>
     },
     {
       category: "Maps",
-      slide: <Maps />,
+      slide: <Maps userData={userData}/>
     },
   ];
   return data[curCat].slide;

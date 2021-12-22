@@ -1,24 +1,25 @@
 import { useState, useEffect } from "react";
-// import { getUsers } from "../../../../common/APIs/recipesApi";
 import { useParams } from "react-router-dom";
 import "../../../../common/SCSS/MoreInfo.scss";
 import UserImages from "./UserImages";
 import ChangeSlide from "./ChangeSlide";
-import { fetchSingleUser } from "../../../../common/redux";
-import { connect } from "react-redux";
+import { singleUserActions } from "../../../../common/redux";
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const UserID = () => {
-  let { offerid } = useParams();
-  return offerid;
-};
 
-const MoreInfo = ({ singleUser, fetchSingleUser }) => {
+const MoreInfo = () => {
+  let { offerid } = useParams()
+  const dispatch = useDispatch();
+  const {fetchSingleUser} = bindActionCreators(singleUserActions, dispatch);
+  
+  const user = useSelector((state) => state.singleUser.user);
+  useEffect(() => {
+    fetchSingleUser(offerid)
+  }, [offerid])
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const UserImg = UserImages();
-
-  useEffect(() => {
-    fetchSingleUser();
-  }, [fetchSingleUser]);
 
   return (
     <div className="page">
@@ -26,12 +27,13 @@ const MoreInfo = ({ singleUser, fetchSingleUser }) => {
         <div className="container">
           <div className="image">
             <img
+              key="avatar"
               src={"https://cdn-icons-png.flaticon.com/512/147/147144.png"}
               alt={`i1
               `}
             />
           </div>
-          {singleUser && <div className="fullname">{singleUser.name}</div>}
+          {user && <div className="fullname">{user.name}</div>}
           <div className="about">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -56,7 +58,7 @@ const MoreInfo = ({ singleUser, fetchSingleUser }) => {
             <button onClick={() => setCurrentSlide(3)}>MAPS</button>
           </div>
           <div className="content">
-            <ChangeSlide curCat={currentSlide} userData={singleUser} />
+            <ChangeSlide curCat={currentSlide} userData={user} />
             <div className="backboard">
               <img
                 src="https://assets.website-files.com/5e83362767d71ffd59a0c8a9/5e9ec9b5babce63530d2abe1_dark_map%402x.jpg"
@@ -67,18 +69,6 @@ const MoreInfo = ({ singleUser, fetchSingleUser }) => {
         </div>
       </div>
     </div>
-  );
+  )
 };
-
-const mapStateToProps = (state) => {
-  return {
-    singleUser: state.singleUser.user,
-  };
-};
-const mapDispatchToProps = (dispatch, userID = UserID()) => {
-  console.log(userID);
-  return {
-    fetchSingleUser: () => dispatch(fetchSingleUser(userID)),
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(MoreInfo);
+export default MoreInfo;
