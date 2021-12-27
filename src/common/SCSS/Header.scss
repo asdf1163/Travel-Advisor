@@ -1,37 +1,107 @@
-@use '../../common/SCSS/abstracts/colors';
-@use '../../common/SCSS/abstracts/fonts';
+@use "../../common/SCSS/abstracts/colors";
+@use "../../common/SCSS/abstracts/fonts";
 
-.header{
-    margin: 0;
-    display: flex;
-    align-items: center;
-    background-color: colors.$header-color;
-    height: 65px;
-    
-    .btn
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 25px;
-        height: 100%;
-        width: 140px;
-        font-family: fonts.$header-font;
-        transition: ease-in-out 0.2s;
-        .logo
-        {
-            font-size: 42px;
-            font-family: fonts.$primary-font;
-        }
+.header {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  background-color: colors.$header-color;
+  height: 10vh;
+  width: 100%;
+  position: relative;
 
-        &:hover
-        {
-            //dodac do spana
-            border-bottom: 1px solid white;
-        }
-
+  @media screen and (max-width: 700px) {
+    & {
+      justify-content: center;
     }
+  }
 
-    
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 140px;
+    font-family: fonts.$header-font;
+    transition: ease-in-out 0.2s;
+    &__logo {
+      font-size: 42px;
+      font-family: fonts.$primary-font;
+    }
+    &__options {
+      font-size: 25px;
+      font-family: fonts.$header-font;
+    }
+  }
 }
 
+@keyframes SlideToBottom {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 90vh;
+  }
+}
+
+.header--opened {
+  position: relative;
+  height: 10vh;
+}
+.header--closed {
+  position: relative;
+  height: 10vh;
+}
+
+.header_m {
+  position: fixed;
+  top: 0;
+  background-color: colors.$header-color;
+  width: 100%;
+  z-index: 100;
+  overflow: hidden;
+
+  li {
+    list-style-type: none;
+  }
+
+  .header {
+    &__possition {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__list {
+      position: relative;
+      z-index: 100;
+      margin: 0 1rem;
+
+      .options {
+        height: fit-content;
+        width: 100%;
+        font-family: fonts.$header-font;
+        font-size: 75px;
+
+        .btn li {
+          height: auto;
+          padding: 3vh 0;
+        }
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+
+      svg {
+        color: darken(colors.$primary-color, 15%);
+      }
+    }
+  }
+}

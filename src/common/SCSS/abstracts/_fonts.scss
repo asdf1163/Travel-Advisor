@@ -4,3 +4,8 @@ $primary-font: "Ropa Sans", sans-serif;
 $header-font: "Rajdhani", sans-serif;
 $user-description: "Raleway", sans-serif;
 $info-font: "Mohave", sans-serif;
+
+
+@mixin responsiveFont($size, $additional) {
+    font-size: clamp($size, -0.575rem + 1.533vw, 2.5rem) $additional;
+}

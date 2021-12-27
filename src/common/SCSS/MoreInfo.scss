@@ -1,10 +1,12 @@
 @use "./abstracts/fonts";
 @use "./abstracts/colors";
+@use "./abstracts/media_query";
 
 .page {
   display: flex;
-  margin: 15px;
+  margin: 15px 0;
   height: 85vh;
+  width: fit-content;
   align-items: center;
   justify-content: center;
   font-size: clamp(1rem, -0.575rem + 1.533vw, 2.5rem);
@@ -25,7 +27,7 @@
       display: flex;
       min-height: 60vh;
       width: 70%;
-      min-width: 250px;
+      min-width: 275px;
       background-color: white;
       flex-direction: column;
       justify-content: space-evenly;
@@ -50,7 +52,8 @@
       .about {
         text-align: center;
         font-family: fonts.$user-description;
-        font-size: 1.05em;
+        // font-size: 1.05em;
+        font-size: clamp(1.05rem, -0.575rem + 1.533vw, 2.5rem);
       }
     }
   }
@@ -61,13 +64,41 @@
     width: fit-content;
 
     .images {
+      position: relative;
+      width: 100%;
+      height: 20vh;
       display: flex;
       justify-content: flex-start;
-      // height: 20%;
-      height: 20vh;
-      width: 100%;
-      right: 0;
+      align-items: center;
       overflow: hidden;
+      box-sizing: border-box;
+
+      &__container {
+        display: flex;
+        height: inherit;
+        position: absolute;
+        transform: translateX(0px);
+      }
+
+      &__nextimg {
+        position: absolute;
+        cursor: pointer;
+        right: 0px;
+        color: white;
+        opacity: 0.8;
+        user-select: none;
+        z-index: 1;
+      }
+
+      &__previmg {
+        position: absolute;
+        cursor: pointer;
+        left: 0px;
+        color: white;
+        opacity: 0.8;
+        user-select: none;
+        z-index: 1;
+      }
 
       img {
         margin: 0 10px;
@@ -79,22 +110,35 @@
       height: 80%;
 
       .options {
+        position: relative;
         display: flex;
-        justify-content: space-evenly;
         align-items: center;
-        height: 10%;
-        transition: ease-in-out 1s;
-        margin: 20px 0 5px 0;
-        button {
-          font-family: fonts.$header-font;
-          // font-size: 20px;
-          font-size: 1.3rem;
-          height: 70%;
-          padding: 0 30px;
-          border-radius: 25px;
-          &:hover {
-            cursor: pointer;
-            background-color: #0000007e;
+        justify-content: center;
+        height: 5vh;
+        width: 100%;
+        margin: 10px 0 0 0;
+        overflow: hidden;
+        white-space: nowrap;
+
+        &_container {
+          display: block;
+          line-height: 2;
+          justify-content: space-evenly;
+          align-items: center;
+          // height: 10%;
+          transition: ease-in-out 1s;
+          // margin: 20px 0 5px 0;
+          button {
+            font-family: fonts.$header-font;
+            font-size: 1.3rem;
+            height: 70%;
+            padding: 0 30px;
+            border-radius: 25px;
+            user-select: none;
+            &:hover {
+              cursor: pointer;
+              background-color: #0000007e;
+            }
           }
         }
       }
@@ -109,3 +153,6 @@
     }
   }
 }
+
+@include media_query.tablet;
+@include media_query.phone;

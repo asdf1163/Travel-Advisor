@@ -1,4 +1,9 @@
 @use "./abstracts/colors";
+
+*{
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background-color: colors.$primary-color;
