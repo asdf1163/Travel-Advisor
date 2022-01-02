@@ -35,15 +35,6 @@
   }
 }
 
-@keyframes SlideToBottom {
-  from {
-    height: 0%;
-  }
-  to {
-    height: 90vh;
-  }
-}
-
 .header--opened {
   position: relative;
   height: 10vh;
@@ -105,3 +96,4 @@
     }
   }
 }
+

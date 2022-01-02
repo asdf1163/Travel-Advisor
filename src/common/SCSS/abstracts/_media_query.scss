@@ -1,6 +1,4 @@
 @use "./fonts";
-// #DLA TABLETÓW
-// Utworzyć osobny zbiór dla zwykłych urządzeń (patrz wysokość) 
 
 @mixin tablet {
   @media only screen and (max-width: 1050px) and (min-height: 850px) {
@@ -9,7 +7,6 @@
     }
     .page {
       display: flex;
-      // margin: 15px;
       flex-flow: wrap-reverse;
       justify-content: center;
       height: unset;
@@ -58,14 +55,12 @@
           display: flex;
           justify-content: flex-start;
           overflow: hidden;
-          // overflow-x: scroll;
           box-sizing: border-box;
 
           .images_container {
             overflow: hidden;
 
             img {
-              // margin: 0 10px;
               aspect-ratio: 16/9;
             }
           }
@@ -92,17 +87,14 @@
               margin: 20px 10px;
 
               .total {
-                // font-size: 1.75em;
                 @include fonts.responsiveFont(2em, !important);
               }
-
               .attraction {
                 height: 70%;
                 overflow: hidden;
 
                 &_space_between {
                   @include fonts.responsiveFont(1.8em, null);
-                  // font-size: 1.5 em;
                 }
               }
 
@@ -180,8 +172,6 @@
             z-index: 1;
             left: -5%;
             img {
-              // width: -moz-fit-content;
-              // width: fit-content;
               border-radius: 25px;
               opacity: 60%;
               width: 18vw;
@@ -226,7 +216,7 @@
 }
 
 @mixin phone {
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 950px) {
       hr {
         display: none;
       }
@@ -281,14 +271,12 @@
             display: flex;
             justify-content: flex-start;
             overflow: hidden;
-            // overflow-x: scroll;
             box-sizing: border-box;
   
             .images_container {
               overflow: hidden;
   
               img {
-                // margin: 0 10px;
                 aspect-ratio: 16/9;
               }
             }
@@ -316,8 +304,7 @@
                 margin: 20px 10px;
   
                 .total {
-                  // font-size: 1.75em;
-                  @include fonts.responsiveFont(2em, !important);
+                  @include fonts.responsiveFont(1.8em, !important);
                 }
   
                 .attraction {
@@ -325,8 +312,7 @@
                   overflow: hidden;
   
                   &_space_between {
-                    @include fonts.responsiveFont(1.8em, null);
-                    // font-size: 1.5 em;
+                    @include fonts.responsiveFont(1.3em, null);
                   }
                 }
   
@@ -343,7 +329,7 @@
                 flex-direction: column;
                 width: 80%;
                 margin: 20px 10px;
-                @include fonts.responsiveFont(1.5em, null);
+                @include fonts.responsiveFont(1.2em, null);
   
                 .message {
                   textarea {
@@ -361,12 +347,14 @@
             .opinion {
               .container {
                 .review {
+                  @include fonts.responsiveFont(1.2em, null);
+                  height: 32vh;
+
                   img
                   {
                     height: 5rem;
                     width: 5rem;
                   }
-                  @include fonts.responsiveFont(1.5em, null);
                 }
   
               }
@@ -404,7 +392,6 @@
               height: 5vh;
               width: 100%;
               margin-top:0.5rem 0;
-              // margin: 1rem 0 -1rem 0;
               overflow-x: overlay;
               white-space: nowrap;
               justify-content: flex-start;
@@ -416,7 +403,6 @@
                 line-height: 2;
                 justify-content: space-evenly;
                 align-items: center;
-                // transition: ease-in-out 1s;
                 button {
                   font-family: "Rajdhani", sans-serif;
                   font-size: 1.8rem;

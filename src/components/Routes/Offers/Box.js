@@ -37,7 +37,9 @@ const Box = ({ userData, fetchUsers }) => {
           <div className="info2">
             <div className="price">TOTAL: 36.99$</div>
             <Link params={{ offerid: users.id }} to={`${users.id}`}>
-              <button>Read more</button>
+              <button>
+                Read more
+              </button>
             </Link>
           </div>
         </div>

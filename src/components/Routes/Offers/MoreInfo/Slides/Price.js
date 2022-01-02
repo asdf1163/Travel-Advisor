@@ -1,18 +1,26 @@
 import "../../../../../common/SCSS/Slides.scss";
 import { useSelector } from "react-redux";
+import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { BsInfoLg } from "react-icons/bs";
 
-const Price = () => {
+
+const Price = ({ animationSlide }) => {
   const infoUser = useSelector((state) => state.singleUser.user);
-
   return (
-    <div className="frontboard">
-      <div className="price">
+    <AnimatePresence>
+      <motion.div
+        className="price"
+        variants={animationSlide}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
         <div className="info">
           <div className="destonation">
             <span>SCOTLAND</span>
             <span>2 DAYS</span>
           </div>
-          <button>i</button>
+          <motion.button whileHover={{ scale: 1.1 }}><BsInfoLg size={20}/></motion.button>
         </div>
         <div className="attraction">
           <div className="attraction_space_between">
@@ -80,8 +88,8 @@ const Price = () => {
           <span>TOTAL:</span>
           <span>xxx.xx$</span>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

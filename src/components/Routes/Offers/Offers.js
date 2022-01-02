@@ -1,12 +1,20 @@
-import '../../../common/SCSS/Offers.scss';
+import "../../../common/SCSS/Offers.scss";
 import Box from "./Box";
+import { motion } from "framer-motion/dist/framer-motion";
 
-const Offers = () => {
-    return (
-        <div className="list">
-            <Box/>
-        </div>
-    );
-}
+const Offers = ({pageAnimation}) => {
 
-export default Offers
+  return (
+    <motion.div
+      className="list"
+      variants={pageAnimation}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
+      <Box />
+    </motion.div>
+  );
+};
+
+export default Offers;

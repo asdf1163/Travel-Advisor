@@ -16,12 +16,10 @@ const Header = () => {
     }, []);
     return size;
   }
-  // const [displayMenu, setDisplayMenu] = useState(true);
-  // console.log(useWindowSize());
 
   return (
     <>
-      {useWindowSize() > 700 ? (
+      {useWindowSize() > 950 ? (
         <div className="header">
           <Link className="btn" to="/">
             <div className="btn__logo">LOGO</div>

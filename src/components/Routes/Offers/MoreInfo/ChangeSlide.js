@@ -1,25 +1,47 @@
 import Price from "./Slides/Price";
 import Contact from "./Slides/Contact";
-import Opinions from "./Slides/Opinions";
+import Opinions from "./Slides/Opinions/Opinions";
 import Maps from "./Slides/Maps";
 
-const ChangeSlide = ({ curCat, userData }) => {
-    const data = [
+const ChangeSlide = ({ curCat }) => {
+  const animationSlide = {
+    hidden: {
+      opacity: 0,
+      x: -80,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+      },
+    },
+    exit: {
+      x: -200,
+      opacity: 0,
+      transition: {
+        delay: 0.2,
+        duration: 2,
+      },
+    },
+  };
+
+  const data = [
     {
       category: "Price",
-      slide: <Price userData={userData}/>
+      slide: <Price animationSlide={animationSlide} />,
     },
     {
       category: "Contact",
-      slide: <Contact userData={userData}/>
+      slide: <Contact animationSlide={animationSlide} />,
     },
     {
       category: "Opinions",
-      slide: <Opinions userData={userData}/>
+      slide: <Opinions animationSlide={animationSlide} />,
     },
     {
       category: "Maps",
-      slide: <Maps userData={userData}/>
+      slide: <Maps animationSlide={animationSlide} />,
     },
   ];
   return data[curCat].slide;

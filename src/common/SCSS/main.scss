@@ -1,4 +1,5 @@
 @use "./abstracts/colors";
+@use "./abstracts/fonts";
 
 *{
   box-sizing: border-box;
@@ -17,6 +18,21 @@ button {
 a {
   text-decoration: none;
   color: white;
+}
+
+.pageNotFound
+{
+  display: flex;
+  width: 100%;
+  height: 80vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  
+  span
+  {
+    font-family: fonts.$primary-font ;
+  }
 }
 
 /* CUSTOM SCROLL*/

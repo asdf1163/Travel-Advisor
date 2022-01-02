@@ -6,7 +6,7 @@
   display: flex;
   margin: 15px 0;
   height: 85vh;
-  width: fit-content;
+  width: auto;
   align-items: center;
   justify-content: center;
   font-size: clamp(1rem, -0.575rem + 1.533vw, 2.5rem);
@@ -52,7 +52,6 @@
       .about {
         text-align: center;
         font-family: fonts.$user-description;
-        // font-size: 1.05em;
         font-size: clamp(1.05rem, -0.575rem + 1.533vw, 2.5rem);
       }
     }
@@ -77,7 +76,6 @@
         display: flex;
         height: inherit;
         position: absolute;
-        transform: translateX(0px);
       }
 
       &__nextimg {
@@ -125,9 +123,7 @@
           line-height: 2;
           justify-content: space-evenly;
           align-items: center;
-          // height: 10%;
           transition: ease-in-out 1s;
-          // margin: 20px 0 5px 0;
           button {
             font-family: fonts.$header-font;
             font-size: 1.3rem;

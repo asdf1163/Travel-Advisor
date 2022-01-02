@@ -23,7 +23,7 @@
 
   .price {
     @extend %slide;
-
+    
     .info {
       display: flex;
       justify-content: space-between;
@@ -192,9 +192,9 @@
     }
     .container {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       height: fit-content;
-      overflow: hidden;
+      
       .review {
         background-color: darken(colors.$primary-color, 3%);
         padding: 10px;
@@ -202,6 +202,7 @@
         margin-bottom: 10px;
         overflow: hidden;
         text-overflow: ellipsis;
+        min-width: 100%;
 
         .userInfo {
           display: flex;

@@ -20,14 +20,12 @@ const MenuMobile = () => {
             </Link>
             {displayMenu ? (
               <span
-                // className="btn__options"
                 onClick={() => setDisplayMenu(false)}
               >
                 <HiX color={"white"} size={buttonSize} />
               </span>
             ) : (
               <span
-                // className="btn__options"
                 onClick={() => setDisplayMenu(true)}
               >
                 <HiMenu color={"white"} size={buttonSize} />
