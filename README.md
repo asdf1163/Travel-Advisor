@@ -8,4 +8,5 @@ This page has been created to provide a great ideas and tips to travelers all ar
   - React-Redux
   - React-Routers
 - SCSS
+- Framer-Motion
 - Axios
