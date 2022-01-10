@@ -20,22 +20,22 @@ const Box = ({ userData, fetchUsers }) => {
         <div className="column_left">
           <div className="image">
             <img
-              src={"https://cdn-icons-png.flaticon.com/512/147/147144.png"}
+              src={users.imgUser}
               alt={`i${users.id}`}
             />
           </div>
           <div className="name">{users.name}</div>
           <div className="stars">
-            <StarsRate numOfStars={3.5} keyUser={users.id} />
+            <StarsRate numOfStars={users.rate} keyUser={users.id} />
           </div>
         </div>
         <div className="column_right">
           <div className="info">
-            <div className="country">Scotland</div>
-            <div className="duration">4 days</div>
+            <div className="country">{users.destination}</div>
+            <div className="duration">{users.duration}</div>
           </div>
           <div className="info2">
-            <div className="price">TOTAL: 36.99$</div>
+            <div className="price">TOTAL: {users.total + users.currency}</div>
             <Link params={{ offerid: users.id }} to={`${users.id}`}>
               <button>
                 Read more

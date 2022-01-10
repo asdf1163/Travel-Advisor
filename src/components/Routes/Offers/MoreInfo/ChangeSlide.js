@@ -3,7 +3,7 @@ import Contact from "./Slides/Contact";
 import Opinions from "./Slides/Opinions/Opinions";
 import Maps from "./Slides/Maps";
 
-const ChangeSlide = ({ curCat }) => {
+const ChangeSlide = ({ curCat, userAPI }) => {
   const animationSlide = {
     hidden: {
       opacity: 0,
@@ -29,15 +29,15 @@ const ChangeSlide = ({ curCat }) => {
   const data = [
     {
       category: "Price",
-      slide: <Price animationSlide={animationSlide} />,
+      slide: <Price animationSlide={animationSlide} userAPI={userAPI.price} />,
     },
     {
       category: "Contact",
-      slide: <Contact animationSlide={animationSlide} />,
+      slide: <Contact animationSlide={animationSlide} userAPI={userAPI.contact} />,
     },
     {
       category: "Opinions",
-      slide: <Opinions animationSlide={animationSlide} />,
+      slide: <Opinions animationSlide={animationSlide} userAPI={userAPI.opinions} />,
     },
     {
       category: "Maps",

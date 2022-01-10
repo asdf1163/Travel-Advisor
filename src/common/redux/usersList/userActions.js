@@ -27,7 +27,7 @@ export const fetchUsersFailure = (error) => {
 
 export const fetchUsers = () => {
   return (dispatch) => {
-    getUsers("")
+    getUsers("/offers")
       .then((response) => {
         const users = response.data;
         dispatch(fetchUsersSuccess(users));

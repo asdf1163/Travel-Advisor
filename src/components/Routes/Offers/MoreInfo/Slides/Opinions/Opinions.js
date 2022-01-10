@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion/dist/framer-motion";
 import Comments from "./Comments";
 
-const Opinions = ({ animationSlide }) => {
+const Opinions = ({ animationSlide, userAPI }) => {
   const [changeTranslateX, setChangeTranslateX] = useState(0);
 
   useEffect(() => {
@@ -26,8 +26,8 @@ const Opinions = ({ animationSlide }) => {
     >
       <div className="opinion_space_between">
         <div className="rate">
-          <div className="overall">4.5/5</div>
-          <div className="ratings">372 ratings</div>
+          <div className="overall">{userAPI.overall}/5</div>
+          <div className="ratings">{userAPI.ratings} ratings</div>
         </div>
         <motion.button whileHover={{ scale: 1.1 }}>READ MORE</motion.button>
       </div>
@@ -42,7 +42,7 @@ const Opinions = ({ animationSlide }) => {
             },
           }}
         >
-          <Comments />
+          <Comments comments={userAPI.comments}/>
         </motion.div>
       </div>
       <div className="dotts">

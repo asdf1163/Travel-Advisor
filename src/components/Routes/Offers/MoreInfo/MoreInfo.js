@@ -67,17 +67,12 @@ const MoreInfo = ({ pageAnimation }) => {
               <img
                 key="avatar"
                 src={"https://cdn-icons-png.flaticon.com/512/147/147144.png"}
-                alt={"i1"}
+                alt={`i${user.id}`}
               />
             </div>
             {user && <div className="fullname">{user.name}</div>}
             <div className="about">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-              been the industry's standard dummy text ever since the 1500s, when
-              an unknown printer took a galley of type and scrambled it to make
-              a type specimen book. It has survived not only five centuries, but
-              also the leap into electronic typesetting, remaining essentially
-              unchanged. It was popularised.
+              {user.description}
             </div>
           </div>
         </div>
@@ -130,8 +125,20 @@ const MoreInfo = ({ pageAnimation }) => {
               </div>
             </div>
             <div className="content">
-              {currentSlide !== 3 ? (
+              {/* {currentSlide !== 3 ? ( */}
                 <>
+                  <div className="frontboard">
+                    <ChangeSlide curCat={currentSlide} userAPI={user}/>
+                  </div>
+                  <div className="backboard">
+                    <img
+                      src="https://assets.website-files.com/5e83362767d71ffd59a0c8a9/5e9ec9b5babce63530d2abe1_dark_map%402x.jpg"
+                      alt="maps"
+                    />
+                  </div>
+                </>
+              {/* ) : ( */}
+                {/* <>
                   <div className="frontboard">
                     <ChangeSlide curCat={currentSlide} />
                   </div>
@@ -141,20 +148,8 @@ const MoreInfo = ({ pageAnimation }) => {
                       alt="maps"
                     />
                   </div>
-                </>
-              ) : (
-                <>
-                  <div className="frontboard">
-                    <ChangeSlide curCat={currentSlide} />
-                  </div>
-                  <div className="backboard">
-                    <img
-                      src="https://assets.website-files.com/5e83362767d71ffd59a0c8a9/5e9ec9b5babce63530d2abe1_dark_map%402x.jpg"
-                      alt="maps"
-                    />
-                  </div>
-                </>
-              )}
+                </> */}
+              {/* )} */}
             </div>
           </div>
         </div>
