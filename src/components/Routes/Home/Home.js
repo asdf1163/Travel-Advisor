@@ -11,10 +11,6 @@ function Home({pageAnimation}) {
       exit="exit"
     >
       Home page :)
-      <li>Zrobić API</li>
-      <li>Wprowadzić animacje</li>
-      <li>Wprowadzić API do mapy</li>
-      <li>Dodać resztę stron</li>
     </motion.div>
   );
 }
